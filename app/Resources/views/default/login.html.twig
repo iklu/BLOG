@@ -1,0 +1,26 @@
+					<!-- START * CONTENT -->
+					<div class="whitebg">
+					     {% if error %}
+							<div>{{ error.messageKey|trans(error.messageData) }}</div>
+	
+						{% endif %}
+						<form {{ path('login_check') }}  method="post">
+							<div class="w-80p">
+								<div class="cat-large">Sign In</div>
+								<div>
+									<label><input type="text" id='username' class="F-text-login f-user" placeholder="_username" value="{{ last_username }}" required></label><br />
+									<label><input type="password" id='password' class="F-text-login f-pw" placeholder="_password" required></label>
+									<div class="submit">
+										<label class="chck" for="checkbox1">
+											<input class="custom-checkbox" value="" id="checkbox1" data-toggle="checkbox" type="checkbox"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
+				    						<span class="chck-label">Stay signed in</span>
+										</label>
+									</div><br />
+									<input type="hidden" name="g_ddesign_page_homepage" value="/" />
+									<input type="submit" class="F-btn-large" value="Login"><br /><br />
+									<div class="text-big">Forgot your password?<br /> <a href="lostpw.html">Click here</a></div>
+								</div>
+							</div>
+						</form>
+					</div>
+					<!-- END * CONTENT -->

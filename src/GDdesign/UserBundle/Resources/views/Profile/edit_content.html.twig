@@ -1,0 +1,60 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<form action="{{ path('fos_user_profile_edit') }}" {{ form_enctype(form) }} method="POST" class="fos_user_profile_edit">
+   
+   <!-- START * CONTENT -->
+					<div class="whitebg">
+						<div class="container">
+						<span style = 'color:red';> {{ form_errors(form) }} </span>
+						
+							<h2 class="cat-large">Edit Profile</h2>
+							<div class="w-50p" align="left">
+
+								<label class="F-label-big">First Name <span class="color-red">*</span></label>
+								{{ form_widget(form.firstname, {'attr': {'class': 'F-text-login F-text-reg'}}) }}
+								{{ form_errors(form.firstname) }}
+								
+								<label class="F-label-big">Last Name <span class="color-red">*</span></label>
+								{{ form_widget(form.lastname, {'attr': {'class': 'F-text-login F-text-reg'}}) }}
+								{{ form_errors(form.lastname) }}
+								
+								<label class="F-label-big">Contact Number</label>
+								{{ form_widget(form.telefon, {'attr': {'class': 'F-text-login F-text-reg'}}) }}
+								{{ form_errors(form.telefon) }}
+								
+								<label class="F-label-big">Email Adress <span class="color-red">*</span></label>
+								{{ form_widget(form.email, {'attr': {'class': 'F-text-login F-text-reg'}}) }}
+								{{ form_errors(form.email) }}
+								
+								<label class="F-label-big">Username <span class="color-red">*</span></label>
+								 {{ form_widget(form.username, {'attr': {'class': 'F-text-login F-text-reg'}}) }}
+								 {{ form_errors(form.username) }}
+								 
+								<div class="row">
+									<div class="col-sm-6">
+										<label class="F-label-big">Current password <span class="color-red">*</span></label>
+										{{ form_widget(form.current_password, {'attr': {'class': 'F-text-login F-text-reg'}}) }}
+										{{ form_errors(form.current_password) }}
+									</div>
+								</div>
+                                                                          {{ form_widget(form._token)}}
+
+							
+								<br /><br />
+								
+							</div>
+							
+						
+						</div>
+					</div>
+					<!-- END * CONTENT -->
+   
+   
+   
+   
+   
+   
+    <div>
+        <input type="submit" value="{{ 'profile.edit.submit'|trans }}" />
+    </div>
+</form>

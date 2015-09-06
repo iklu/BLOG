@@ -1,0 +1,19 @@
+account_created:
+    path:     /hello/{name}
+    defaults: { _controller: GDdesignUserBundle:Registration:accountCreated }
+
+account_register:
+    path:     /{_locale}/register.{_format}
+    defaults: { _controller: GDdesignUserBundle:Registration:register }
+    requirements:
+        _locale : en|es
+    defaults:
+        _format : html
+
+account_create:
+    path:     /{_locale}/register/create.{_format}
+    defaults: { _controller: GDdesignUserBundle:Registration:create }
+    requirements:
+        _locale : en|es
+    defaults:
+        _format : html  

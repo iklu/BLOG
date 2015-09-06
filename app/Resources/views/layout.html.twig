@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+<!-- TO CREATE THE HTML5 ELEMENTS FOR OLDER BROWSERS -->
+		<script>
+			document.createElement('header');
+			document.createElement('footer');
+			document.createElement('nav');
+			document.createElement('article');
+			document.createElement('aside');
+			document.createElement('section');
+		</script>
+<!-- end -->
+		<link rel="stylesheet" type="text/css" href="{{ asset('./bundles/gddesignpage/css/style.css') }}">
+		<link rel="stylesheet" type="text/css" href="{{ asset('./bundles/gddesignpage/css/bootstrap.css') }}">
+		
+		<link rel="stylesheet" type="text/css" href="{{ asset('./bundles/gddesignpage/css/fonts/fontawesome/css/font-awesome.min.css') }}">
+		<script type='text/javascript' src="{{ asset('./bundles/gddesignpage/js/jquery.js')}}"></script>
+		<script type='text/javascript' src="{{ asset('./bundles/gddesignpage/js/bootstrap.min.js')}}"></script>
+		<script type='text/javascript' src="{{ asset('./bundles/gddesignpage/js/engine.js')}}"></script>
+		<title>GD Design</title>
+	</head>
+	<body>
+	
+		<div class="aligner" align="center">
+			<div class="Content">
+				
+				<div id="Top" align="left">
+					<div class="Top-a">
+						<div class="container">
+							<div class="row">
+								<div class="col-sm-4">
+									<ul id="social">
+										<li class="Btn-glyph fa fa-facebook fb"></li>
+										<li class="Btn-glyph fa fa-twitter tw"></li>
+										<li class="Btn-glyph fa fa-rss rss"></li>
+									</ul>
+								</div>
+								<div class="col-sm-8">
+								<div class="log">
+									{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}    										
+    										<a href="{{url('fos_user_profile_show')}}"> <i  class="fa fa-lg fa-user medium"></i> {{app.user.username}}</a> 
+    										<span style = 'color:white'> | </span>
+    										<a href="{{ url('fos_user_security_logout' ) }}"> <i  class="fa fa-lg fa-sign-out medium"></i>{% trans %} Logout {% endtrans %} </a> 
+									{%else%}
+								           <a href="{{ url('fos_user_security_login') }}"><i  class="fa fa-lg fa-sign-in medium"></i>{% trans %}Login{% endtrans %}</a>  
+								           <span style = 'color:white'> | </span>
+								           <a href="{{ url('account_register' , { '_format': 'html'}) }}">	{% trans %}Register{% endtrans %}</a>
+								     {%endif%}      
+								 </div>
+								<div align="right">
+									<div class="btn-group" align="center">
+										<button id="lang-btn" type="button" class="btn btn-primary dropdown-toggle"data-toggle="dropdown">{% if app.request.getLocale() == 'es' %}Castellano{% else %}English{%endif%} <span class="caret"></span></button>
+										<ul class="dropdown-menu" role="menu">
+										{% if app.request.getLocale() == 'es' %}
+											<li><a href="{{ url('g_ddesign_page_locale' , {'_locale' : 'en', '_format': 'html'}) }}">Inglés</a></li>
+											<li class="divider"></li>
+											<li><a href="{{ url('g_ddesign_page_locale' , {'_locale' : 'es', '_format': 'html'}) }}">Castellano</a></li>
+										{%endif%}
+										{% if app.request.getLocale() == 'en' %}	
+											<li><a href="{{ url('g_ddesign_page_locale' , {'_locale' : 'es', '_format': 'html'}) }}">Spanish</a></li>
+											<li class="divider"></li>
+											<li><a href="{{ url('g_ddesign_page_locale' , {'_locale' : 'es', '_format': 'html'}) }}">English</a></li>
+										{%endif%}
+										</ul>
+									</div>
+								</div>
+							</div>
+
+								
+					
+							</div>
+						</div>
+					</div>
+				</div><!-- END * TOP -->
+				<div class="sep"></div>
+				
+				<header>
+				<img src="{{ asset('./bundles/gddesignpage/images/banner.jpg')}}" width="100%">
+					<nav align="center">
+						<span class="menu-bg">
+						
+							<a href="{{ url('g_ddesign_page_locale' , { '_format': 'html'}) }}"><span class="menu-item first {%if index is defined%}{{index}}{%endif%}"><span class="glyph fa fa-home"></span></span></a>
+							<a href="{{ url('g_ddesign_page_webdevelopment' , { '_format': 'html'}) }}"><span class="menu-item {%if webdev is defined%}{{webdev}}{%endif%}">{%trans%}WEB DEVELOPMENT{%endtrans%}</span></a>
+							<a href="{{ url('g_ddesign_page_contact' , { '_format': 'html'}) }}"><span class="menu-item {%if contact is defined%}{{contact}}{%endif%}">{%trans%}CONTACT{%endtrans%}</span></a>
+							<a href="{{ url('g_ddesign_page_aboutus' , { '_format': 'html'}) }}"><span class="menu-item last {%if aboutus is defined%}{{aboutus}}{%endif%}">{%trans%}ABOUT US{%endtrans%}</span></a>
+							
+						</span>
+					</nav>
+				</header>
+				<div class="C-aligner">
+				<!-- PROMOTION -->
+				{% if promotions is defined %}
+				 {{ include('default/promotions.html.twig') }}
+				{%endif%} 
+<!-- START * CONTENT -->
+
+
+{% block page %} 
+
+{% endblock page %}
+
+
+<!-- END * CONTENT -->
+					</div>
+					
+					
+<!--Start of  FOOTER -->
+					<footer class="Footer" align="left">
+						<div class="container">
+							<div class="row">
+								<div class="col-sm-4">
+									<h3 class="header-title">About Us</h3>
+									<span class="h3-line"></span>
+									<p>
+										<span class="fa fa-group"></span> We are a talented, dedicated and well prepared group of young people that love the creative process behind the scenes.<br> We can construct the application your business is missing and that your clients wish to see.
+									</p>
+									<h3 class="header-title">Newsletter</h3>
+									<span class="h3-line"></span>
+									<p>
+										Stay up to date with the latest news and promotions. Subscribe Now!
+										<form>
+											<input class="F-text-newsletter" type="email" placeholder="Email Adress" required><input type="submit" class="F-btn-simple" value="Subscribe">
+										</form>
+									</p>
+								</div>
+								<div class="col-sm-4">
+									<a href="{{ path('g_ddesign_page_news', {'_format':'html', 'page':'1'}) }}"><h3 class="header-title">Recent Activity</h3></a>
+									<span class="h3-line"></span>
+									<!-- <p class="posts">
+										<a href="#" class="Foot-a"><img src="{{ asset('./bundles/gddesignpage/images/canvas.jpg')}}" width="40px" height="40px">
+										onec mper. Praesent commodo cursus magna, vel scelerisque nisl consectetur</a>
+										<br><span class="date">Septembre 11 2001</span>
+									</p>
+									<div align="center"><div class="Foot-sep"></div></div>
+									<p class="posts">
+										<a href="#" class="Foot-a"><img src="{{ asset('./bundles/gddesignpage/images/canvas.jpg')}}" width="40px" height="40px">
+										oscelerisque nisl consectetur</a>
+										<br><span class="date">Septembre 11 2001</span>
+									</p>
+									<div align="center"><div class="Foot-sep"></div></div>
+									<p class="posts">
+										<a href="#" class="Foot-a"><img src="{{ asset('./bundles/gddesignpage/images/canvas.jpg')}}" width="40px" height="40px">
+										od semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur</a>
+										<br><span class="date">Septembre 11 2001</span>
+									</p>-->
+									<div align="center"><div class="Foot-sep"></div></div>
+									<p class="posts" align="center">
+									There is no activity. Please check us later on.
+									</p>
+									<div align="center"><div class="Foot-sep"></div></div>
+								</div>
+								<div class="col-sm-4">
+									<h3 class="header-title">Contact Us</h3>
+									<span class="h3-line"></span>
+									<p>
+										<span class="fa fa-lg fa-phone"></span> <strong class="tel">Tel</strong>: +923234392424 <br><br>
+										<span class="fa fa-lg fa-print"></span> <strong class="fax">Fax</strong>: 111-222-333 <br><br>
+										<span class="fa fa-lg fa-envelope"></span> <strong class="email">Email</strong>: <a class="Foot-a" href="mailito:dragoiovidiu2011@gmail.com">saleem804@gmail.com</a>
+									</p>
+									<h3 class="header-title">Stay Connected</h3>
+									<span class="h3-line"></span>
+									<div class="foot-abnormal">
+										<ul>
+											<li class="Btn-glyph-large fb fa fa-facebook"></li>
+											<li class="Btn-glyph-large tw fa fa-twitter"></li>
+											<li class="Btn-glyph-large rss fa fa-rss"></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</footer>
+					<div class="Foot-down">© GD Design 2015 <span class="links"><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></span>	<img class="s-logo" src="{{ asset('./bundles/gddesignpage/images/logo-s.png')}}" ></div>
+<!-- End of footer -->
+
+
+
+
+
+
+				</div><!-- END * C-aligner -->
+			</div><!-- END * CONTENT -->
+		</div> <!-- END * aligner -->
+	</body>
+</html>
+

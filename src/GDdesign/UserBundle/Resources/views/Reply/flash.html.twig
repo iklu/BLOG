@@ -1,0 +1,9 @@
+{% extends 'default/message.html.twig' %}
+
+{% block message %}
+
+{% for flashMessage in app.session.flashbag.get('notice') %}
+{{ flashMessage }}
+{% endfor %}
+
+{%endblock%}

@@ -1,0 +1,40 @@
+admin_calendar:
+        path:     /admin/calendar.{_format}
+        defaults: { _controller: GDdesignAdminBundle:Ajax:calendar}
+        requirements: { _format: html }
+
+admin_charts:
+        path:     /admin/charts/{charts}
+        defaults: { _controller: GDdesignAdminBundle:Ajax:charts}	
+
+admin_dashboard:
+        path:     /admin/dashboard
+        defaults: { _controller: GDdesignAdminBundle:Ajax:dashboard}
+
+admin_forms:
+        path:     /admin/form/{forms}
+        defaults: { _controller: GDdesignAdminBundle:Ajax:forms}
+
+admin_gallery:
+        path:     /admin/gallery/{gallery}
+        defaults: { _controller: GDdesignAdminBundle:Ajax:gallery}
+
+admin_map:
+        path:     /admin/map/{maps}
+        defaults: { _controller: GDdesignAdminBundle:Ajax:maps}
+
+admin_page:
+        path:     /admin/page/{page}
+        defaults: { _controller: GDdesignAdminBundle:Ajax:pages}
+
+admin_tables:
+        path:     /admin/tables/{table}
+        defaults: { _controller: GDdesignAdminBundle:Ajax:tables}
+
+admin_typografy:
+        path:     /admin/typografy/{typografy}
+        defaults: { _controller: GDdesignAdminBundle:Ajax:typografy}
+
+admin_ui:
+        path:     /admin/UI/{ui}
+        defaults: { _controller: GDdesignAdminBundle:Ajax:UI}

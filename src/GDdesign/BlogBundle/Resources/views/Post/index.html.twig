@@ -1,0 +1,45 @@
+{% extends 'GDdesignAdminBundle::layout.html.twig' %}
+
+{% block admin_load %}
+    <h1>Post list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                
+                <th>Title</th>
+                <th>Status</th>
+                <th>Published</th>                
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+               
+                <td>{{ entity.title }}</td>  
+                <td>{{ entity.status }}</td>
+                <td>{% if entity.publishedAt %}{{ entity.publishedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('post_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('post_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('post_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

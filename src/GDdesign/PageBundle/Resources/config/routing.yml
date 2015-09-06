@@ -1,0 +1,67 @@
+g_ddesign_page_homepage:
+    path:     /
+    defaults: { _controller: GDdesignPageBundle:Default:index }
+    requirements:
+        _locale : en|es
+    defaults:
+        _format : html
+
+g_ddesign_page_locale:
+    path:     /{_locale}/homepage.{_format}
+    defaults: { _controller: GDdesignPageBundle:Default:index }
+    requirements:
+        _locale : en|es
+    defaults:
+        _format : html
+        
+g_ddesign_page_webdevelopment:
+    path:     /{_locale}/web-development.{_format}
+    defaults: { _controller: GDdesignPageBundle:Default:webDevelopment }
+    requirements:
+        _locale : en|es
+    defaults:
+        _format : html
+
+g_ddesign_page_news:
+    path:     /{_locale}/{page}/news.{_format}
+    defaults: { _controller: GDdesignPageBundle:Default:news , page:1 }
+    requirements:
+        _locale : en|es
+    defaults:
+        _format : html
+
+g_ddesign_page_posts_show:
+    path:     /{_locale}/news/{year}/{title}.{_format}
+    defaults: { _controller: GDdesignPageBundle:Default:showNews  }
+    requirements:
+        _locale : en|es
+        year: \d+
+    defaults:
+        _format : html    
+
+g_ddesign_page_contact:
+    path:     /{_locale}/contact.{_format}
+    defaults: { _controller: GDdesignPageBundle:Default:contact }
+    requirements:
+        _locale : en|es
+    defaults:
+        _format : html 
+
+g_ddesign_page_aboutus:
+    path:     /{_locale}/about-us.{_format}
+    defaults: { _controller: GDdesignPageBundle:Default:aboutUs }
+    requirements:
+        _locale : en|es
+    defaults:
+        _format : html                       
+        
+
+translate:
+    pattern: /{_locale}/translate
+    defaults: {_controller: GDdesignPageBundle:Default:translate  }
+    requirements:
+        _locale: en|es
+
+not_found_page:
+    pattern: /not-found
+    defaults: {_controller: GDdesignPageBundle:Default:notFound  }  

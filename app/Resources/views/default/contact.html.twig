@@ -1,0 +1,32 @@
+{% extends 'layout.html.twig' %}
+{% block page %}
+
+					<!-- START * SECTION -->
+					<div class="section-white pad-50">
+						<div class="container">
+							<div class="row">
+								<div class="col-sm-3">
+								<div class="header-title">Contact Info</div><span class="h3-line"></span>
+									<span class="fa fa-phone"></span> <strong class="tel">Tel</strong>: +923234392424 <br><br>
+									<span class="fa fa-print"></span> <strong class="fax">Fax</strong>: 111-222-333 <br><br>
+									<span class="fa fa-envelope"></span> <strong class="email">Email</strong>: <a class="Foot-a" href="mailito:saleem804@gmail.com">saleem804@gmail.com</a>
+								</div>
+								<div class="col-sm-3">
+								<div class="header-title">Office Hours</div><span class="h3-line"></span>
+								<div class="fa fa-clock-o fa-lg"></div> <strong><span>Mon.-Fri.:</strong> 8am  to 8pm (GMT+1)</span><br /><br />
+								<div class="fa fa-clock-o fa-lg"></div> <strong><span>Sat.:</strong> 12pm  to 8pm (GMT+1)</span><br /><br />
+								<div class="fa fa-clock-o fa-lg"></div> <strong><span>Sun.:</strong> Closed</span><br /><br />
+								</div>
+								<div class="col-sm-6">
+									<form>
+										<input type="text" class="F-text-login f-user width-100" placeholder="Your Name" required>
+										<input type="email" class="F-text-login f-mail width-100" placeholder="Email Adress" required>
+										<textarea class="F-textarea" placeholder="Write your message"></textarea>
+										<input type="submit" value="Send Message" class="F-btn-simple width-100">
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- END * SECTION -->
+					{%endblock%}

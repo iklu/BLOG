@@ -1,0 +1,152 @@
+{% extends 'default/message.html.twig' %}
+
+{% block message %}	
+	{# bootstrap #}
+	<div class="packt">        
+        <ul class="nav nav-tabs nav-justified">
+            <li class="active"><a href="{{ path('message_reply') }}"><span class="glyphicon glyphicon-inbox"></span> Messages <span class="badge">19</span></a></li>
+            <li><a href="{{ path('message_reply_outbox') }}">Outbox</a></li>
+            <li><a href="#">Starred</a></li>
+            <li class="disabled"><a href="#">Trash</a></li>
+            </ul>
+            <br> 
+    
+        	<form action="{{ url('message_delete_checked') }}" method="post" >
+        	{%if message['subject'] is  defined%}
+            {% for i in  0..count-1 %}
+        	
+        	    {% if message['true'][i] == true %}
+        		<!-- MESSAGE -->
+        			
+        			<div class="user-message">        				
+        					<input  value="{{message['message_id'][i]}}" id="{{message['message_id'][i]}}" name="message_id[]" data-toggle="checkbox" type="checkbox">
+        				
+        					 <span>
+        					       {%if app.user.username == message['receiver'][i] %}
+        							     {{ message['sender'][i] }}
+        					       {%else%}
+        							     {{ message['receiver'][i] }}
+        							
+        					       {%endif%}		
+        					</span>
+        				<a href="{{ path('message_reply_show', { 'id': message['message_id'][i] }) }}"><span class="user-re"><strong></strong><strong> 
+        					{%if app.user.username == message['receiver'][i] %}
+        						<b>{{message['last_subj'][i]}}</b> <span style='color:red'; >new </span>
+        					
+        					{%else%}
+        						
+        							<span style='color:grey';>{{message['last_subj'][i]}}</span>
+        						
+        					{%endif%}	 
+        						   
+        				 </strong> </span></a>
+        				<span class="user-time float-right">{{ message['time'][i] }}</span>
+        			</div>
+        			{%endif%}
+        	{%endfor%}
+        	{%endif%}
+        	<div class="buttons"><button type="submit" class="btn btn-warning"><span class="glyphicon glyphicon-trash"></span> Send to Trash </button></div>
+        	</form>
+        	     
+	<hr><br>  
+	</div>
+    {# end #}
+
+			
+					
+
+							
+							
+				
+	
+
+
+             
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{#
+
+
+    <h1>Message list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>User</th>
+                <th>Message</th>
+                <th>Subject</th>
+                <th>Body</th>
+                <th>Live</th>
+                <th>Deleted</th>
+                <th>Created</th>
+                <th>Modified</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('message_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.user }}</td>
+                <td>{{ entity.message }}</td>
+                <td>{{ entity.subject }}</td>
+                <td>{{ entity.body }}</td>
+                <td>{{ entity.live }}</td>
+                <td>{{ entity.deleted }}</td>
+                <td>{% if entity.created %}{{ entity.created|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if entity.modified %}{{ entity.modified|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('message_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('message_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('message_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    
+    #}
+    {% endblock %}

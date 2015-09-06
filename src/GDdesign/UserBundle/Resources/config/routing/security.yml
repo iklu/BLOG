@@ -1,0 +1,10 @@
+#using FOS login
+#login:
+    #path:     /login
+    #defaults: { _controller: GDdesignUserBundle:Security:login }
+#using FOS login
+#login_check:
+    #pattern:   /login_check
+#using FOS login
+#logout:
+    #pattern:   /logout

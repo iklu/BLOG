@@ -1,0 +1,25 @@
+{% extends 'layout.html.twig' %}
+{% block page %}
+
+					<!-- START * CONTENT -->
+					<div class="whitebg pad-50">
+						<div class="container">
+							<p class="text-hudge">Latest News</p>
+			
+					           {% for entity in entities  %}
+					           
+							<!-- START * NEWS -->
+							<div meta="Service Information" align="left" class="m-bot-70">
+								<h2 id="Wordpress" class="cat-large"> {{ entity.title }} </h2>
+								<span id='news-date'> {{ entity.publishedAt|date('M d, Y' ) }} </span>
+								<p>
+									{{ entity.content }}
+								</p>
+								{# <a href="#"><button class="F-btn-large">Configure your Wordpress</button></a> #}
+							</div>
+							{%endfor%}
+							<!-- END * NEWS -->
+						</div>
+					<!-- END * CONTENT -->
+					
+{%endblock%}						

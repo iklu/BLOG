@@ -1,0 +1,221 @@
+
+
+
+<div class="row">
+	<div id="breadcrumb" class="col-xs-12">
+		<a href="#" class="show-sidebar">
+			<i class="fa fa-bars"></i>
+		</a>
+		<ol class="breadcrumb pull-left">
+			<li><a href="#">Dashboard</a></li>
+			<li><a href="#">Tables</a></li>
+			<li><a href="#">Data Tables</a></li>
+		</ol>
+		<div id="social" class="pull-right">
+			<a href="#"><i class="fa fa-google-plus"></i></a>
+			<a href="#"><i class="fa fa-facebook"></i></a>
+			<a href="#"><i class="fa fa-twitter"></i></a>
+			<a href="#"><i class="fa fa-linkedin"></i></a>
+			<a href="#"><i class="fa fa-youtube"></i></a>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-xs-12">
+        <div class="box">
+			<div class="box-header">
+				<div class="box-name">
+					<i class="fa fa-search"></i>
+					<span>Add New User</span>
+				</div>
+				<div class="box-icons">
+					<a class="collapse-link">
+						<i class="fa fa-chevron-up"></i>
+					</a>
+					<a class="expand-link">
+						<i class="fa fa-expand"></i>
+					</a>
+					<a class="close-link">
+						<i class="fa fa-times"></i>
+					</a>
+				</div>
+				<div class="no-move"></div>
+			</div>
+
+			<div class="box-content">
+			<div id='test'>d</div>
+			   	
+				<form id="defaultForm" name='newUser' action="{{ path('admin_create') }}" method="post" {{ form_enctype(form) }} class="form-horizontal">		
+					<fieldset>
+						<legend>Create a brand new user and add them to this site.</legend>	
+						<span style = 'color:red';> {{ form_errors(form) }} </span>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">First Name</label>
+							<div class="col-sm-5">
+								{{ form_widget(form.firstname, {'attr': {'class': 'form-control'}}) }}
+								{{ form_errors(form.firstname) }}	
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">Last Name</label>
+							<div class="col-sm-5">
+								{{ form_widget(form.lastname, {'attr': {'class': 'form-control'}}) }}	
+								{{ form_errors(form.lastname) }}	
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">Telefon</label>
+							<div class="col-sm-5">
+								{{ form_widget(form.telefon, {'attr': {'class': 'form-control'}}) }}	
+								{{ form_errors(form.telefon) }}	
+							</div>
+						</div>
+						
+											
+					</fieldset>
+					<fieldset>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">Username (required)</label>
+							<div class="col-sm-5">
+								{{ form_widget(form.username, {'attr': {'class': 'form-control'}}) }}	
+								{{ form_errors(form.username) }}			
+								<div id="username_error"></div>				
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">Email address (required)</label>
+							<div class="col-sm-5">
+								{{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}	
+								{{ form_errors(form.email) }}
+							</div>
+						</div>						
+						<div class="form-group">
+							<label class="col-sm-3 control-label">Password</label>
+							<div class="col-sm-5">
+								{{ form_widget(form.password, {'attr': {'class': 'form-control'}}) }}	
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">Retype password</label>
+							<div class="col-sm-5">
+								{{ form_widget(form.confirmPassword, {'attr': {'class': 'form-control'}}) }}
+							</div>
+						</div>
+						
+						
+												
+								{{ form_widget(form.bootstrapValidationEmail, {'attr': {'class': 'form-control'}}) }}
+					
+													
+								{{ form_widget(form.bootstrapValidationUsername, {'attr': {'class': 'form-control'}}) }}
+							
+						        
+								{{ form_widget(form._token) }}
+								
+						
+						<div class="form-group">							
+							<div class="form-group">								
+								<div class="col-sm-9 col-sm-offset-3">
+									<button  type="submit" class="btn btn-primary">Submit</button>
+									
+								</div>
+							</div>
+					    </div>
+					</fieldset>
+					</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="modal fade" id="myModal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<!-- Modal Header -->
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Welcome Back!</h4>
+				</div>
+			<!-- Modal Body -->
+				<div class="modal-body">
+					<h1>Hello Readers!</h1>
+				</div>
+			<!-- Modal Footer -->
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary"> Save changes</button>
+				</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+<button class="btn btn-primary btn-lg" data-toggle="modal"  data-target="#myModal">
+	Launch modal
+</button>
+
+
+
+
+	<script type="text/javascript">
+// Run Select2 plugin on elements
+function DemoSelect2(){
+	$('#s2_with_tag').select2({placeholder: "Select OS"});
+	$('#country').select2();
+	$('#roles').select2();
+	
+	
+}
+// Run timepicker
+function DemoTimePicker(){
+	$('#input_time').timepicker({setDate: new Date()});
+}
+
+$(document).ready(function() {
+	// Create Wysiwig editor for textare
+	TinyMCEStart('#wysiwig_simple', null);
+	TinyMCEStart('#wysiwig_full', 'extreme');
+	// Add slider for change test input length
+	FormLayoutExampleInputLength($( ".slider-style" ));
+	// Initialize datepicker
+	$('#input_date').datepicker({setDate: new Date()});
+	// Load Timepicker plugin
+	LoadTimePickerScript(DemoTimePicker);
+	// Add tooltip to form-controls
+	$('.form-control').tooltip();
+	LoadSelect2Script(DemoSelect2);
+	// Load example of form validation
+	LoadBootstrapValidatorScript(DemoFormValidator);
+	// Add drag-n-drop feature to boxes
+	WinMove();
+
+});
+
+</script>
+
+<!-- admin js -->
+<script src="{{ asset('./bundles/gddesignadmin/js/admin.js')}}"></script>
+
+
+
+

@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>Invalid credentials.</source>
+                <target>El usuario o la clave son incorectas!</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>Welcome to our page!</source>
+                <target>Bienvenido a nuestra pagina!</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>Register</source>
+                <target>Crear nueva cuenta!</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>Login</source>
+                <target>Entra en tu cuenta!</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>Sign In</source>
+                <target>Entra en tu cuenta!</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>Remember Me!</source>
+                <target>Acuerda la ultima sesion!</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>Compose</source>
+                <target>Compone</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>Design</source>
+                <target>Maquetación</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>Logout</source>
+                <target>Salir</target>
+            </trans-unit>
+			<trans-unit id="10">
+                <source>Return to main page</source>
+                <target> Vuelve a la página principal</target>
+            </trans-unit>
+			<trans-unit id="11">
+                <source>Password Recovery</source>
+                <target> Recuperar la Contrasena</target>
+            </trans-unit>
+			<trans-unit id="12">
+                <source>Forgot your password?</source>
+                <target> Has olvidado tu contraseña?</target>
+            </trans-unit>
+			<trans-unit id="13">
+                <source>Click here</source>
+                <target> Clica aqui</target>
+            </trans-unit>
+            <trans-unit id="14">
+                <source>See more...</source>
+                <target>Ver mas...</target>
+            </trans-unit>
+            <trans-unit id="15">
+                <source>WEB DEVELOPMENT</source>
+                <target>DESAROLLO WEB</target>
+            </trans-unit>
+            <trans-unit id="16">
+                <source>CONTACT</source>
+                <target>CONTACTO</target>
+            </trans-unit>
+            <trans-unit id="17">
+                <source>ABOUT US</source>
+                <target>SOBRE NOSOTROS</target>
+            </trans-unit>
+            <trans-unit id="18">
+                <source>Who we are</source>
+                <target>Quien somos</target>
+            </trans-unit>
+            <trans-unit id="19">
+                <source>What do we do</source>
+                <target>Que hacemos</target>
+            </trans-unit>
+            <trans-unit id="20">
+                <source>Why choose us</source>
+                <target>Por que elegirnos</target>
+            </trans-unit>                
+        </body>
+    </file>
+</xliff>

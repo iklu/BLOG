@@ -1,0 +1,5 @@
+g_ddesign_admin_ajax:
+    resource: "@GDdesignAdminBundle/Resources/config/routing/ajax.yml"
+   
+g_ddesign_admin_homepage:
+    resource: "@GDdesignAdminBundle/Resources/config/routing/admin.yml"

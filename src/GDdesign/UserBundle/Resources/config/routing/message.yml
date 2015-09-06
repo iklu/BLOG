@@ -1,0 +1,5 @@
+
+message_delete_checked:
+    path:     /delete-messages
+    defaults: { _controller: "GDdesignUserBundle:Message:deleteCheckedMessages" }
+    methods:  [POST]	

@@ -1,0 +1,70 @@
+{% extends 'default/message.html.twig' %}
+
+{% block message %}
+
+<script type='text/javascript' src="{{ asset('./bundles/gddesignpage/typeahead/dist/typeahead.jquery.min.js')}}"></script>
+<script type='text/javascript' src="{{ asset('./bundles/gddesignpage/typeahead/dist/typeahead.bundle.js')}}"></script>
+
+
+
+
+
+<script>
+
+  var products = new Bloodhound({
+    datumTokenizer: function(d) {return d.name; },
+    queryTokenizer: Bloodhound.tokenizers.whitespace,
+    prefetch: 'http://localhost/BLOG/web/Products.json'
+
+
+  });
+
+
+  products.initialize();
+
+  $('.test1').typeahead({
+    highlight: true
+  },
+  {
+    name: 'products',
+    displayKey: 'num',
+    source: states.ttAdapter()
+
+  });
+
+ 
+  
+  </script>
+   
+     <form action="{{ url('message_create') }}" method="post" {{ form_enctype(form) }}>
+                           <div class="user-cat">
+							     <a href="{{ path('message_new') }}"><button  class="user-btn left selected"><span class="Gliph vertical-middle">&#61468;</span> New Message</button></a>
+								 <a href="{{ path('message') }}"><button class="user-btn left right"><span class="Gliph vertical-middle">&#61468;</span> Inbox (3)</button></a>
+								<a href="{{ path('message_outbox') }}"><button class="user-btn left right"><span class="Gliph vertical-middle">&#61509;</span> Outbox (0)</button></a>
+								<button class="user-btn right"><span class="Gliph vertical-middle">&#61460;</span> Trash (0)</button>
+								<button class="user-btn right left"><span class="Gliph vertical-middle">&#61445;</span> Starred (0)</button>
+							</div>
+							<div align="left">
+								<div class="sender">Administrator, 25min ago</div>
+								<div class="title">User : {{ form_widget(form.user)}}</div>
+								<div class="title">Subject : {{ form_widget(form.subject)}}</div>
+								<div class="message">Body :  {{ form_widget(form.body)}}</div>
+								<div class="sep-light"></div>
+								<div class="buttons"><button class="user-btn top"><span class="Gliph vertical-middle">&#61470;</span> Reply</button><button class="user-btn top"><span class="Gliph vertical-middle">&#61445;</span> Favorite</button><button class="user-btn right top"><span class="Gliph vertical-middle">&#61460;</span> Send to Trash</button></div>
+							</div>
+    
+    {{ tinymce_init() }}
+    
+    
+    
+    
+    
+    
+    
+
+{{ form_rest(form) }}
+</form>
+<div class="search_content">
+    <input class="test1" type="text" placeholder="product">
+</div>
+{% endblock %}

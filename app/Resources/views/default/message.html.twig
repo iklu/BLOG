@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+    <!-- TO CREATE THE HTML5 ELEMENTS FOR OLDER BROWSERS -->
+		<script>
+			document.createElement('header');
+			document.createElement('footer');
+			document.createElement('nav');
+			document.createElement('article');
+			document.createElement('aside');
+			document.createElement('section');
+		</script>
+    <!-- end -->
+		<link rel="stylesheet" type="text/css" href="{{ asset('./bundles/gddesignpage/css/style.css') }}">
+		<link rel="stylesheet" type="text/css" href="{{ asset('./bundles/gddesignuser/devoopsPack/plugins/bootstrap/bootstrap.css') }}">
+		<link rel="stylesheet" type="text/css" href="{{ asset('./bundles/gddesignuser/devoopsPack/plugins/bootstrap/bootstrap-theme.min.css') }}">			
+			
+		<link rel="stylesheet" type="text/css" href="{{ asset('./bundles/gddesignpage/css/fonts/fontawesome/css/font-awesome.min.css') }}">
+		<script type='text/javascript' src="{{ asset('./bundles/gddesignuser/devoopsPack/plugins/jquery/jquery.min.js') }}"></script> 
+		<script type='text/javascript' src="{{ asset('./bundles/gddesignpage/js/engine.js')}}"></script>
+		<script type='text/javascript' src="{{ asset('./bundles/gddesignuser/devoopsPack/plugins/bootstrap/bootstrap.min.js') }}"></script>    
+		
+		<title>GD Design</title>
+	</head>
+	<body>
+		<div id="Top" align="left">
+			    <div class="loga">
+					 <a href="{{ url('g_ddesign_page_locale' , { '_format': 'html'}) }}"><i  class="fa fa-lg fa-user medium"></i>{% trans %}Return to main page{% endtrans %}</a> 
+					 <span style = 'color:white'> | </span>
+					 <a href="{{ url('fos_user_security_logout' ) }}"><i  class="fa fa-lg fa-sign-out medium"></i> {% trans %}Logout{% endtrans %}</a>
+				</div>
+				</div><!-- END * TOP -->
+				<div class="sep"></div>
+				<table cellpadding="0" cellspacing="0" width="100%">
+					<tr>
+						<td class="admin-menu">
+							<ul class="admin-m-item">
+								<a href="{{ path('message_reply') }}"><li><span id='icon-font' class="fa fa-lg fa-inbox "></span> My Messages </li></a>
+								<a href="{{ path('message_reply_contacts') }}"><li><span  id='icon-font' class="fa fa-lg fa-user"></span>Contacts</li></a>
+								<a href="#"><li><span  id='icon-font' class="fa fa-lg fa-briefcase"></span>Active Projects</li></a>
+								<a href="{{url('fos_user_profile_show')}}"><li><span id='icon-font'  class="fa fa-lg fa-edit"></span>Account Management</li></a>
+								<a href="{{ path('fos_user_change_password')}}"><li><span  id='icon-font' class="fa fa-lg fa-key"></span>Change Password</li></a>
+							</ul>
+						</td>
+						<td class="admin-bg">
+						
+<!-- START * CONTENT -->
+
+	{% block message %} 
+	{% endblock message %}
+
+							
+<!-- END * CONTENT -->				
+						</td>
+					</tr>
+				</table>
+					</div>
+					
+					
+<!--Start of  FOOTER -->
+					<footer class="Footer" align="left">
+						<div class="container">
+							<div class="row">
+								<div class="col-sm-4">
+									<h3 class="header-title">About Us</h3>
+									<span class="h3-line"></span>
+									<p>
+										<span class="fa fa-lg fa-group"></span> We are a talented, dedicated and well prepared group of young people that love the creative process behind the scenes.<br> We can construct the application your business is missing and that your clients wish to see.
+									</p>
+									<h3 class="header-title">Newsletter</h3>
+									<span class="h3-line"></span>
+									<p>
+										Stay up to date with the latest news and promotions. Subscribe Now!
+										<form>
+											<input class="F-text-newsletter" type="email" placeholder="Email Adress" required><input type="submit" class="F-btn-simple" value="Subscribe">
+										</form>
+									</p>
+								</div>
+								<div class="col-sm-4">
+									<h3 class="header-title">Recent Activity</h3>
+									<span class="h3-line"></span>
+									<div align="center"><div class="Foot-sep"></div></div>
+									<p class="posts" align="center">
+									There is no activity. Please check us later on.
+									</p>
+									<div align="center"><div class="Foot-sep"></div></div>
+								</div>
+								<div class="col-sm-4">																
+									<h3 class="header-title">Contact Us</h3>
+									<span class="h3-line"></span>
+									   <p>
+                                        <span class="fa fa-lg fa-phone"></span> <strong class="tel">Tel</strong>: +923234392424 <br><br>
+                                        <span class="fa fa-lg fa-print"></span> <strong class="fax">Fax</strong>: 111-222-333 <br><br>
+                                        <span class="fa fa-lg fa-envelope"></span> <strong class="email">Email</strong>: <a class="Foot-a" href="mailito:dragoiovidiu2011@gmail.com">saleem804@gmail.com</a>
+                                    </p>
+								
+								</div>
+							</div>
+						</div>
+					</footer>
+					<div class="Foot-down">© GD Design 2015 <span class="links"><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></span><img class="s-logo" src="../img/logo-s.png"></div>	
+<!-- End of footer -->
+	</body>
+</html>

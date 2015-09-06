@@ -1,0 +1,70 @@
+{% extends 'layout.html.twig' %}
+{% block page %}
+
+
+<form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register">
+  
+<!-- START * CONTENT -->
+					<div class="whitebg">
+						<div class="container">
+						<span style = 'color:red';> {{ form_errors(form) }} </span>
+						
+							<h2 class="cat-large">Register a New Account</h2>
+							<div class="w-50p" align="left">
+
+								<label class="F-label-big">First Name <span class="color-red">*</span></label>
+								{{ form_widget(form.firstname, {'attr': {'class': 'F-text-login F-text-reg'}}) }}
+								{{ form_errors(form.firstname) }}
+								
+								<label class="F-label-big">Last Name <span class="color-red">*</span></label>
+								{{ form_widget(form.lastname, {'attr': {'class': 'F-text-login F-text-reg'}}) }}
+								{{ form_errors(form.lastname) }}
+								
+								<label class="F-label-big">Contact Number</label>
+								{{ form_widget(form.telefon, {'attr': {'class': 'F-text-login F-text-reg'}}) }}
+								{{ form_errors(form.telefon) }}
+								
+								<label class="F-label-big">Email Adress <span class="color-red">*</span></label>
+								{{ form_widget(form.email, {'attr': {'class': 'F-text-login F-text-reg'}}) }}
+								{{ form_errors(form.email) }}
+								
+								<label class="F-label-big">Username <span class="color-red">*</span></label>
+								 {{ form_widget(form.username, {'attr': {'class': 'F-text-login F-text-reg'}}) }}
+								 {{ form_errors(form.username) }}
+								 
+								<div class="row">
+									<div class="col-sm-6">
+										<label class="F-label-big">Password <span class="color-red">*</span></label>
+										{{ form_widget(form.plainPassword.password, {'attr': {'class': 'F-text-login F-text-reg'}}) }}
+										{{ form_errors(form.plainPassword.password) }}
+									</div>
+									<div class="col-sm-6">
+										<label class="F-label-big">Confirm Password <span class="color-red">*</span></label>
+										{{ form_widget(form.plainPassword.confirm, {'attr': {'class': 'F-text-login F-text-reg'}}) }}
+										{{ form_errors(form.plainPassword.confirm) }}
+									</div>
+								</div>
+                                                                          {{ form_widget(form._token)}}
+
+							
+									
+
+								<br /><br />
+								<div class="row">
+									<div class="col-sm-3">
+										<input name='submit' type="submit" class="F-btn-large" value="Register">
+									</div>
+									<div class="col-sm-8 pad-top-10">
+									<label class="chck" for="fos_user_registration_form_terms">
+									     {{ form_widget(form.terms, {'attr': {'class': 'custom-checkbox',  'data-toggle' : 'checkbox', 'value' : ''}}) }}
+										<span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
+							 			<span class="dark-bold">I Read and Agreed with the <a href="#">Terms and Conditions</a></span>
+						 			</div>
+								</div>
+							</div>
+						</form>
+						</div>
+					</div>
+					<!-- END * CONTENT -->
+
+{%endblock%}

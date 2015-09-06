@@ -1,0 +1,4 @@
+services:
+#    g_ddesign_admin.example:
+#        class: GDdesign\AdminBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

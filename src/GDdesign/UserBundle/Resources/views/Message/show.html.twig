@@ -1,0 +1,83 @@
+{% extends 'default/message.html.twig' %}
+
+{% block message %}
+
+			<div class="user-cat">
+                                <a href="{{ path('message_new') }}"><button  class="user-btn left right"><span class="Gliph vertical-middle">&#61468;</span> New Message</button></a>
+								 <a href="{{ path('message') }}"><button class="user-btn left selected"><span class="Gliph vertical-middle">&#61468;</span> Inbox (3)</button></a>
+								<a href="{{ path('message_outbox') }}"><button class="user-btn left right"><span class="Gliph vertical-middle">&#61509;</span> Outbox (0)</button></a>
+								<button class="user-btn right"><span class="Gliph vertical-middle">&#61460;</span> Trash (0)</button>
+								<button class="user-btn right left"><span class="Gliph vertical-middle">&#61445;</span> Starred (0)</button>
+			</div>
+			<div align="left">
+								<div class="sender">{{ entity.user.username }}, {{ entity.created|date('Y-m-d H:i:s') }}</div>
+								<div class="title">Re: {{ entity.subject }}</div>
+								<div class="message">{{ entity.body }}</div>
+								<div class="sep-light"></div>
+			</div>
+			<a href="{{ path('message') }}">   Back to the list    </a>
+
+
+
+
+
+{#
+    <h1>Message</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>User</th>
+                <td>{{ entity.user }}</td>
+            </tr>
+            <tr>
+                <th>Message</th>
+                <td>{{ entity.message }}</td>
+            </tr>
+            <tr>
+                <th>Subject</th>
+                <td>{{ entity.subject }}</td>
+            </tr>
+            <tr>
+                <th>Body</th>
+                <td>{{ entity.body }}</td>
+            </tr>
+            <tr>
+                <th>Live</th>
+                <td>{{ entity.live }}</td>
+            </tr>
+            <tr>
+                <th>Deleted</th>
+                <td>{{ entity.deleted }}</td>
+            </tr>
+            <tr>
+                <th>Created</th>
+                <td>{{ entity.created|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Modified</th>
+                <td>{{ entity.modified|date('Y-m-d H:i:s') }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('message') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('message_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+
+#}
+{% endblock %}

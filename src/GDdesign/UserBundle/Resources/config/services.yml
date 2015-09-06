@@ -1,0 +1,73 @@
+parameters:
+# ...
+    mailer.transport: sendmail
+
+services:
+    mailer:
+        class: GDdesign\UserBundle\Mailer\Mailer
+        arguments: ["%mailer.transport%"]
+        
+    newsletter_manager:
+        class: GDdesign\UserBundle\Mailer\NewsletterManager
+        calls:
+             - [setMailer, ["@mailer"]]
+
+
+
+
+
+
+
+
+
+    app.diff:
+        class: GDdesign\UserBundle\Utils\DateTime
+
+    userbundle.message.subscriber:
+        class: GDdesign\UserBundle\EventListener\MessageSubscriber
+        tags:
+             - { name: doctrine.event_subscriber, connection: default }
+
+    kernel.listener.userbundle_exception_listener:
+        class: GDdesign\UserBundle\EventListener\ExceptionListener
+        tags:
+             - { name: kernel.event_listener, event: kernel.exception, method: onKernelException }
+
+    kernel.listener.userbundle_request_listener:
+        class: GDdesign\UserBundle\EventListener\RequestListener
+        tags:
+             - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }
+
+    gddesign_user.send_message.type:
+        class: GDdesign\UserBundle\Form\MessageType
+        arguments: ["@security.token_storage"]
+        tags:
+            - { name: form.type, alias: admin_message }
+
+    gddesign_user.registration.form.type:
+        class: GDdesign\UserBundle\Form\Type\RegistrationFormType
+        tags:
+            - { name: form.type, alias: gddesign_user_registration }
+
+    gddesign_user.edit.form.type:
+        class: GDdesign\UserBundle\Form\Type\ProfileFormType
+        tags:
+            - { name: form.type, alias: gddesign_user_edit }
+
+    gddesign.registration_listener:
+        class: GDdesign\UserBundle\EventListener\RegistrationListener
+        arguments: []
+        tags:
+            - { name: kernel.event_subscriber }
+
+    gddesign.message_listener:
+        class: GDdesign\UserBundle\EventListener\MessageSentListener
+        arguments: []
+        tags:
+            - { name: kernel.event_subscriber }
+
+    gddesign.user_listener:
+        class: GDdesign\UserBundle\EventListener\UserExistsListener
+        arguments: []
+        tags:
+            - { name: kernel.event_subscriber }    

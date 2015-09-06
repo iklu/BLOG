@@ -1,0 +1,45 @@
+message_reply:
+    path:     /{page}
+    defaults: { _controller: GDdesignUserBundle:Reply:inbox, page:1 }
+    requirements: 
+           page: \d+
+
+message_reply_show:
+    path:     /{id}/show
+    defaults: { _controller: "GDdesignUserBundle:Reply:show" }
+
+message_reply_new:
+    path:     /{user}/new
+    defaults: { _controller: "GDdesignUserBundle:Reply:new" }
+
+message_reply_create:
+    path:     /create
+    defaults: { _controller: "GDdesignUserBundle:Reply:create" }
+    methods:  POST
+
+message_reply_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "GDdesignUserBundle:Reply:edit" }
+
+message_reply_update:
+    path:     /{id}/update
+    defaults: { _controller: "GDdesignUserBundle:Reply:update" }
+    methods:  [POST, PUT]
+
+message_reply_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GDdesignUserBundle:Reply:delete" }
+    methods:  [POST, DELETE]
+
+message_delete_checked:
+    path:     /delete-messages
+    defaults: { _controller: "GDdesignUserBundle:Reply:deleteCheckedMessages" }
+    methods:  [POST]	
+
+message_reply_outbox:
+    path:     /outbox
+    defaults: { _controller: "GDdesignUserBundle:Reply:outbox" }
+
+message_reply_contacts:
+    path:    /contacts
+    defaults: { _controller: "GDdesignUserBundle:Reply:contacts" }

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for C:\wamp\www\BLOG\src\GDdesign/BlogBundle</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <link href="../css/nv.d3.css" rel="stylesheet">
+  <link href="../css/style.css" rel="stylesheet">
+  <!--[if lt IE 9]>
+  <script src="../js/html5shiv.min.js"></script>
+  <script src="../js/respond.min.js"></script>
+  <![endif]-->
+ </head>
+ <body>
+  <header>
+   <div class="container">
+    <div class="row">
+     <div class="col-md-12">
+      <ol class="breadcrumb">
+        <li><a href="../index.html">C:\wamp\www\BLOG\src\GDdesign</a></li>
+        <li><a href="index.html">BlogBundle</a></li>
+        <li class="active">(Dashboard)</li>
+
+      </ol>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Form/PostType.php.html#9">PostType</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Utils/Slugger.php.html#6">Slugger</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Utils/String.php.html#14">String</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/PostRepository.php.html#5">PostRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Post.php.html#15">Post</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="DependencyInjection/Configuration.php.html#13">Configuration</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="DependencyInjection/GDdesignBlogExtension.php.html#15">GDdesignBlogExtension</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/PostController.php.html#18">PostController</a></td><td class="text-right">0%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Utils/String.php.html#14">String</a></td><td class="text-right">552</td></tr>
+       <tr><td><a href="Controller/PostController.php.html#18">PostController</a></td><td class="text-right">306</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Entity/PostRepository.php.html#7"><abbr title="PostRepository::findAllOrderedByPublishedAt">findAllOrderedByPublishedAt</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/PostRepository.php.html#18"><abbr title="PostRepository::getAllOrderedByPublishedAt">getAllOrderedByPublishedAt</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/PostType.php.html#15"><abbr title="PostType::buildForm">buildForm</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Post.php.html#215"><abbr title="Post::getModifiedAt">getModifiedAt</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Post.php.html#203"><abbr title="Post::setModifiedAt">setModifiedAt</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Post.php.html#166"><abbr title="Post::getStatus">getStatus</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Post.php.html#179"><abbr title="Post::setPublishedAt">setPublishedAt</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Post.php.html#191"><abbr title="Post::getPublishedAt">getPublishedAt</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/PostType.php.html#27"><abbr title="PostType::setDefaultOptions">setDefaultOptions</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/PostType.php.html#37"><abbr title="PostType::getName">getName</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Utils/String.php.html#79"><abbr title="String::extractHash">extractHash</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Utils/String.php.html#85"><abbr title="String::randomString">randomString</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Utils/String.php.html#109"><abbr title="String::powerPass">powerPass</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Utils/String.php.html#66"><abbr title="String::encodeString">encodeString</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Utils/String.php.html#57"><abbr title="String::cryptString">cryptString</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Utils/Slugger.php.html#9"><abbr title="Slugger::slugify">slugify</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Utils/String.php.html#17"><abbr title="String::cutString">cutString</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Post.php.html#154"><abbr title="Post::setStatus">setStatus</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Post.php.html#143"><abbr title="Post::getContent">getContent</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/PostController.php.html#165"><abbr title="PostController::createEditForm">createEditForm</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/PostController.php.html#183"><abbr title="PostController::updateAction">updateAction</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/PostController.php.html#215"><abbr title="PostController::deleteAction">deleteAction</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/PostController.php.html#138"><abbr title="PostController::editAction">editAction</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/PostController.php.html#113"><abbr title="PostController::showAction">showAction</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/PostController.php.html#47"><abbr title="PostController::createAction">createAction</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/PostController.php.html#76"><abbr title="PostController::createCreateForm">createCreateForm</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/PostController.php.html#95"><abbr title="PostController::newAction">newAction</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/PostController.php.html#242"><abbr title="PostController::createDeleteForm">createDeleteForm</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="DependencyInjection/Configuration.php.html#18"><abbr title="Configuration::getConfigTreeBuilder">getConfigTreeBuilder</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Post.php.html#108"><abbr title="Post::setSlug">setSlug</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Post.php.html#120"><abbr title="Post::getSlug">getSlug</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Post.php.html#131"><abbr title="Post::setContent">setContent</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Post.php.html#97"><abbr title="Post::getTitle">getTitle</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Post.php.html#85"><abbr title="Post::setTitle">setTitle</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="DependencyInjection/GDdesignBlogExtension.php.html#20"><abbr title="GDdesignBlogExtension::load">load</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Post.php.html#74"><abbr title="Post::getId">getId</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/PostController.php.html#28"><abbr title="PostController::indexAction">indexAction</a></a></td><td class="text-right">0%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Utils/String.php.html#17"><abbr title="String::cutString">cutString</abbr></a></td><td class="text-right">90</td></tr>
+       <tr><td><a href="Utils/String.php.html#109"><abbr title="String::powerPass">powerPass</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="Utils/String.php.html#85"><abbr title="String::randomString">randomString</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Controller/PostController.php.html#215"><abbr title="PostController::deleteAction">deleteAction</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Controller/PostController.php.html#183"><abbr title="PostController::updateAction">updateAction</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Controller/PostController.php.html#113"><abbr title="PostController::showAction">showAction</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Controller/PostController.php.html#138"><abbr title="PostController::editAction">editAction</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Utils/String.php.html#57"><abbr title="String::cryptString">cryptString</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Controller/PostController.php.html#47"><abbr title="PostController::createAction">createAction</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Utils/String.php.html#66"><abbr title="String::encodeString">encodeString</abbr></a></td><td class="text-right">6</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="http://github.com/sebastianbergmann/php-code-coverage" target="_top">PHP_CodeCoverage 2.0.17</a> using <a href="http://php.net/" target="_top">PHP 5.5.12</a> and <a href="http://phpunit.de/">PHPUnit 4.6.8</a> at Fri Jun 5 7:39:39 CEST 2015.</small>
+    </p>
+   </footer>
+  </div>
+  <script src="../js/jquery.min.js" type="text/javascript"></script>
+  <script src="../js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="../js/holder.js" type="text/javascript"></script>
+  <script src="../js/d3.min.js" type="text/javascript"></script>
+  <script src="../js/nv.d3.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#classCoverageDistribution svg')
+      .datum(getCoverageDistributionData([8,0,0,0,0,0,0,0,0,0,0,1], "Class Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#methodCoverageDistribution svg')
+      .datum(getCoverageDistributionData([37,0,0,0,0,0,0,0,0,0,0,0], "Method Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getCoverageDistributionData(data, label) {
+    var labels = [
+      '0%',
+      '0-10%',
+      '10-20%',
+      '20-30%',
+      '30-40%',
+      '40-50%',
+      '50-60%',
+      '60-70%',
+      '70-80%',
+      '80-90%',
+      '90-100%',
+      '100%'
+    ];
+    var values = [];
+    $.each(labels, function(key) {
+      values.push({x: labels[key], y: data[key]});
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.scatter.onlyCircles(false);
+    chart.tooltipContent(function(key, y, e, graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+    d3.select('#classComplexity svg')
+      .datum(getComplexityData([[0,17,"<a href=\"Controller\/PostController.php.html#18\">PostController<\/a>"],[0,1,"<a href=\"DependencyInjection\/Configuration.php.html#13\">Configuration<\/a>"],[0,1,"<a href=\"DependencyInjection\/GDdesignBlogExtension.php.html#15\">GDdesignBlogExtension<\/a>"],[0,13,"<a href=\"Entity\/Post.php.html#15\">Post<\/a>"],[0,2,"<a href=\"Entity\/PostRepository.php.html#5\">PostRepository<\/a>"],[0,3,"<a href=\"Form\/PostType.php.html#9\">PostType<\/a>"],[100,0,"<a href=\"GDdesignBlogBundle.php.html#7\">GDdesignBlogBundle<\/a>"],[0,1,"<a href=\"Utils\/Slugger.php.html#6\">Slugger<\/a>"],[0,23,"<a href=\"Utils\/String.php.html#14\">String<\/a>"]], 'Class Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.scatter.onlyCircles(false);
+    chart.tooltipContent(function(key, y, e, graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Method Complexity');
+
+    d3.select('#methodComplexity svg')
+      .datum(getComplexityData([[0,1,"<a href=\"Controller\/PostController.php.html#28\">PostController::indexAction<\/a>"],[0,2,"<a href=\"Controller\/PostController.php.html#47\">PostController::createAction<\/a>"],[0,1,"<a href=\"Controller\/PostController.php.html#76\">PostController::createCreateForm<\/a>"],[0,1,"<a href=\"Controller\/PostController.php.html#95\">PostController::newAction<\/a>"],[0,2,"<a href=\"Controller\/PostController.php.html#113\">PostController::showAction<\/a>"],[0,2,"<a href=\"Controller\/PostController.php.html#138\">PostController::editAction<\/a>"],[0,1,"<a href=\"Controller\/PostController.php.html#165\">PostController::createEditForm<\/a>"],[0,3,"<a href=\"Controller\/PostController.php.html#183\">PostController::updateAction<\/a>"],[0,3,"<a href=\"Controller\/PostController.php.html#215\">PostController::deleteAction<\/a>"],[0,1,"<a href=\"Controller\/PostController.php.html#242\">PostController::createDeleteForm<\/a>"],[0,1,"<a href=\"DependencyInjection\/Configuration.php.html#18\">Configuration::getConfigTreeBuilder<\/a>"],[0,1,"<a href=\"DependencyInjection\/GDdesignBlogExtension.php.html#20\">GDdesignBlogExtension::load<\/a>"],[0,1,"<a href=\"Entity\/Post.php.html#74\">Post::getId<\/a>"],[0,1,"<a href=\"Entity\/Post.php.html#85\">Post::setTitle<\/a>"],[0,1,"<a href=\"Entity\/Post.php.html#97\">Post::getTitle<\/a>"],[0,1,"<a href=\"Entity\/Post.php.html#108\">Post::setSlug<\/a>"],[0,1,"<a href=\"Entity\/Post.php.html#120\">Post::getSlug<\/a>"],[0,1,"<a href=\"Entity\/Post.php.html#131\">Post::setContent<\/a>"],[0,1,"<a href=\"Entity\/Post.php.html#143\">Post::getContent<\/a>"],[0,1,"<a href=\"Entity\/Post.php.html#154\">Post::setStatus<\/a>"],[0,1,"<a href=\"Entity\/Post.php.html#166\">Post::getStatus<\/a>"],[0,1,"<a href=\"Entity\/Post.php.html#179\">Post::setPublishedAt<\/a>"],[0,1,"<a href=\"Entity\/Post.php.html#191\">Post::getPublishedAt<\/a>"],[0,1,"<a href=\"Entity\/Post.php.html#203\">Post::setModifiedAt<\/a>"],[0,1,"<a href=\"Entity\/Post.php.html#215\">Post::getModifiedAt<\/a>"],[0,1,"<a href=\"Entity\/PostRepository.php.html#7\">PostRepository::findAllOrderedByPublishedAt<\/a>"],[0,1,"<a href=\"Entity\/PostRepository.php.html#18\">PostRepository::getAllOrderedByPublishedAt<\/a>"],[0,1,"<a href=\"Form\/PostType.php.html#15\">PostType::buildForm<\/a>"],[0,1,"<a href=\"Form\/PostType.php.html#27\">PostType::setDefaultOptions<\/a>"],[0,1,"<a href=\"Form\/PostType.php.html#37\">PostType::getName<\/a>"],[0,1,"<a href=\"Utils\/Slugger.php.html#9\">Slugger::slugify<\/a>"],[0,9,"<a href=\"Utils\/String.php.html#17\">String::cutString<\/a>"],[0,2,"<a href=\"Utils\/String.php.html#57\">String::cryptString<\/a>"],[0,2,"<a href=\"Utils\/String.php.html#66\">String::encodeString<\/a>"],[0,1,"<a href=\"Utils\/String.php.html#79\">String::extractHash<\/a>"],[0,3,"<a href=\"Utils\/String.php.html#85\">String::randomString<\/a>"],[0,6,"<a href=\"Utils\/String.php.html#109\">String::powerPass<\/a>"]], 'Method Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getComplexityData(data, label) {
+    var values = [];
+    $.each(data, function(key) {
+      var value = Math.round(data[key][0]*100) / 100;
+      values.push({
+        x: value,
+        y: data[key][1],
+        class: data[key][2],
+        size: 0.05,
+        shape: 'diamond'
+      });
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+});
+  </script>
+ </body>
+</html>

@@ -1,0 +1,19 @@
+g_ddesign_blog:
+    resource: "@GDdesignBlogBundle/Resources/config/routing.yml"
+    prefix:   /
+
+g_ddesign_admin:
+    resource: "@GDdesignAdminBundle/Resources/config/routing.yml"
+    prefix:   /
+
+g_ddesign_user:
+    resource: "@GDdesignUserBundle/Resources/config/routing.yml"
+    prefix:   /
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+g_ddesign_page:
+    resource: "@GDdesignPageBundle/Resources/config/routing.yml"
+    prefix:   /
+

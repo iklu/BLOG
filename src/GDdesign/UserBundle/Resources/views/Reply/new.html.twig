@@ -1,0 +1,57 @@
+{% extends 'default/message.html.twig' %}
+
+{% block message %}
+
+<script type='text/javascript' src="{{ asset('./bundles/gddesignpage/typeahead/dist/typeahead.jquery.min.js')}}"></script>
+<script type='text/javascript' src="{{ asset('./bundles/gddesignpage/typeahead/dist/typeahead.bundle.js')}}"></script>
+
+
+
+
+
+<script>
+
+  var products = new Bloodhound({
+    datumTokenizer: function(d) {return d.name; },
+    queryTokenizer: Bloodhound.tokenizers.whitespace,
+    prefetch: 'http://localhost/BLOG/web/Products.json'
+
+
+  });
+
+
+  products.initialize();
+
+  $('.test1').typeahead({
+    highlight: true
+  },
+  {
+    name: 'products',
+    displayKey: 'num',
+    source: states.ttAdapter()
+
+  });
+
+ 
+  {{ tinymce_init() }}
+  
+  
+  </script>
+   
+     <form action="{{ url('message_reply_create') }}" method="post" {{ form_enctype(form) }}>
+                         
+							<div align="left">
+								<div class="sender">Administrator, 25min ago</div>
+									<div class="title">User : {{ form_widget(form.user)}}</div>
+									<div class="title">Subject : {{ form_widget(form.subject)}}</div>
+									<div class="message">Body :  {{ form_widget(form.body)}}</div>
+										{{ form_widget(form._token)}}
+										{{ form_widget(form.user)}}
+									<div class="sep-light"></div>
+									<div class="buttons"><button class="user-btn top">
+									<span class="Gliph vertical-middle">&#61470;</span> Reply</button>								
+								</div>
+							</div>
+	</form>
+
+{% endblock %}

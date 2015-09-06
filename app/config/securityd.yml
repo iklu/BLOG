@@ -1,0 +1,41 @@
+security:       
+      
+    firewalls:
+      #register:
+            #pattern: ^/register
+            #security: false
+      secured_area:
+          pattern: ^/*
+          anonymous: ~
+          form_login:
+                login_path: /login
+                check_path: /login_check
+                require_previous_session: true
+          logout:
+                 path: /logout
+                 target: /login
+          remember_me:
+                 key: "%secret%"
+                 name: BlogCookie
+                 lifetime: 3600 # in seconds
+                 path: /
+                 domain: ~
+                 secure: false
+                 httponly: true
+                 always_remember_me: false
+                 remember_me_parameter: _remember_me                  
+    access_control:           
+            - { path: ^/admin, roles: ROLE_ADMIN}
+    role_hierarchy:
+        ROLE_ADMIN:       ROLE_USER
+        ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+
+    providers:
+        user_db:       
+            entity: { class: GDdesign\UserBundle\Entity\UserRegister }
+
+    encoders:
+        Symfony\Component\Security\Core\User\User: plaintext        
+        GDdesign\UserBundle\Entity\UserRegister:
+          algorithm:  bcrypt
+          cost: 13

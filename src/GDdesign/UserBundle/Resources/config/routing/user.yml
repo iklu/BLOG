@@ -1,0 +1,52 @@
+admin:
+    path:     /read-all-users
+    defaults: { _controller: "GDdesignUserBundle:User:index" }
+
+admin_show:
+    path:     /{id}/show
+    defaults: { _controller: "GDdesignUserBundle:User:show" }
+
+admin_ajax_show:
+    path:     /{id}/json-data
+    defaults: { _controller: "GDdesignUserBundle:Ajax:show" }
+
+admin_new:
+    path:     /new
+    defaults: { _controller: "GDdesignUserBundle:User:new" }
+
+admin_create:
+    path:     /create
+    defaults: { _controller: "GDdesignUserBundle:User:create" }
+    methods:  POST
+    
+admin_ajax_verify_user:
+    path:     /verify-ajax-user
+    defaults: { _controller: "GDdesignUserBundle:Ajax:verifyUser" }
+    methods:  GET
+
+admin_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "GDdesignUserBundle:User:edit" }
+
+admin_update:
+    path:     /{id}/update
+    defaults: { _controller: "GDdesignUserBundle:User:update" }
+    methods:  [POST, PUT]
+
+admin_ajax_update:
+    path:     /update-ajax
+    defaults: { _controller: "GDdesignUserBundle:Ajax:update" }
+    methods:  [GET]
+
+admin_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GDdesignUserBundle:User:delete" }
+    methods:  [POST, DELETE]
+
+admin_page_found1:
+    path:     /admin/{page}
+    defaults: { _controller: GDdesignAdminBundle:Admin:index } 
+    
+admin_page_found2:
+    path:     /admin/{page}/
+    defaults: { _controller: GDdesignAdminBundle:Admin:index } 

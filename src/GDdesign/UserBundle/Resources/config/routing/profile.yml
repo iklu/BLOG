@@ -1,0 +1,21 @@
+show:
+    path:     /
+    defaults: { _controller: GDdesignUserBundle:Profile:show }
+
+show:
+    path:     /profile
+    defaults: { _controller: GDdesignUserBundle:Profile:show }
+
+edit:
+    path:     /edit
+    defaults: { _controller: GDdesignUserBundle:Profile:edit }
+
+manage_account:
+    path:     /manage-account
+    defaults: { _controller: GDdesignUserBundle:Profile:manageAccount }
+
+delete_account:
+    path:     /delete
+    defaults: { _controller: GDdesignUserBundle:Profile:deleteAccount}
+    
+    

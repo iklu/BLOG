@@ -1,0 +1,6 @@
+services:
+#    g_ddesign_blog.example:
+#        class: GDdesign\BlogBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]
+     post.slugger:
+         class: GDdesign\BlogBundle\Utils\Slugger

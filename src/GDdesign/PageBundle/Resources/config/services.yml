@@ -1,0 +1,4 @@
+services:
+#    g_ddesign_page.example:
+#        class: GDdesign\PageBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

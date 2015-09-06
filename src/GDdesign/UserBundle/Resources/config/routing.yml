@@ -1,0 +1,18 @@
+g_ddesign_user_message_reply:
+    resource: "@GDdesignUserBundle/Resources/config/routing/reply.yml"
+    prefix:   /user/message
+
+g_ddesign_user_admin:
+    resource: "@GDdesignUserBundle/Resources/config/routing/user.yml"
+    prefix:   /admin
+
+g_ddesign_user_created:
+    resource: "@GDdesignUserBundle/Resources/config/routing/register.yml"
+
+g_ddesign_user_login:
+    resource: "@GDdesignUserBundle/Resources/config/routing/security.yml"
+    prefix:   /user
+
+g_ddesign_user_profile:
+    resource: "@GDdesignUserBundle/Resources/config/routing/profile.yml"
+    prefix:   /user
