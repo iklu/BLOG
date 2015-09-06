@@ -12,13 +12,14 @@
 			document.createElement('section');
 		</script>
 <!-- end -->
-		<link rel="stylesheet" type="text/css" href="{{ url('bundles/gddesignpage/css/style.css') }}">
-		<link rel="stylesheet" type="text/css" href="{{ url('bundles/gddesignpage/css/bootstrap.css') }}">
+		<link rel="stylesheet" type="text/css" href="{{app.request.uriForPath( asset('bundles/gddesignpage/css/style.css')) }}">
 		
-		<link rel="stylesheet" type="text/css" href="{{ url('bundles/gddesignpage/css/fonts/fontawesome/css/font-awesome.min.css') }}">
-		<script type='text/javascript' src="{{ url('bundles/gddesignpage/js/jquery.js')}}"></script>
-		<script type='text/javascript' src="{{ url('bundles/gddesignpage/js/bootstrap.min.js')}}"></script>
-		<script type='text/javascript' src="{{ url('bundles/gddesignpage/js/engine.js')}}"></script>
+		<link rel="stylesheet" type="text/css" href="{{ asset('bundles/gddesignpage/css/bootstrap.css') }}">
+		
+		<link rel="stylesheet" type="text/css" href="{{ asset('bundles/gddesignpage/css/fonts/fontawesome/css/font-awesome.min.css') }}">
+		<script type='text/javascript' src="{{ asset('bundles/gddesignpage/js/jquery.js')}}"></script>
+		<script type='text/javascript' src="{{ asset('bundles/gddesignpage/js/bootstrap.min.js')}}"></script>
+		<script type='text/javascript' src="{{ asset('bundles/gddesignpage/js/engine.js')}}"></script>
 		<title>GD Design</title>
 	</head>
 	<body>
