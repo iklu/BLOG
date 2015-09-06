@@ -24,11 +24,12 @@
         "friendsofsymfony/user-bundle": "~2.0@dev",
 		"stfalcon/tinymce-bundle": "dev-master",
         "friendsofsymfony/elastica-bundle": "^3.1",
-        "doctrine/doctrine-migrations-bundle": "^1.0",
-        "heroku/heroku-buildpack-php": "*"
+        "doctrine/doctrine-migrations-bundle": "^1.0"
+         
     },
     "require-dev": {
-        "sensio/generator-bundle": "~2.3"
+        "sensio/generator-bundle": "~2.3",
+        "heroku/heroku-buildpack-php": "*"
     },
     "scripts": {
         "post-root-package-install": [
