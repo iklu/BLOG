@@ -19,7 +19,7 @@ class UserType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {   
          $builder->addEventListener(FormEvents::PRE_SET_DATA, function (FormEvent $event) {
-	          $user = $event->getData();
+	      $user = $event->getData();
               $form = $event->getForm();
               $user->getUsername();
               if(!$user || null != $user->getId()) 

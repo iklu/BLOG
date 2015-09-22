@@ -53,8 +53,11 @@ g_ddesign_page_aboutus:
     requirements:
         _locale : en|es
     defaults:
-        _format : html                       
-        
+        _format : html
+                       
+g_ddesign_page_send_mail:
+    path:     /send-mail
+    defaults: { _controller: GDdesignPageBundle:Default:sendMail }        
 
 translate:
     pattern: /{_locale}/translate

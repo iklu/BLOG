@@ -18,12 +18,13 @@ security:
                 provider: fos_userbundle
                 csrf_provider: form.csrf_provider
                 require_previous_session: true
+                default_target_path: g_ddesign_page_locale
             logout: 
             anonymous:    true
             remember_me:
                  key: "%secret%"
-                 name: BlogNewCookie
-                 lifetime: 3600 # in seconds
+                 name: BlogNedwCookie
+                 lifetime: 3600000 # in seconds
                  path: /
                  domain: ~
                  secure: false

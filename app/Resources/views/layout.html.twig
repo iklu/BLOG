@@ -1,3 +1,4 @@
+{{ app.request.locale }}
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -12,13 +13,14 @@
 			document.createElement('section');
 		</script>
 <!-- end -->
-		<link rel="stylesheet" type="text/css" href="/web/bundles/gddesignpage/css/style.css">
-		<link rel="stylesheet" type="text/css" href="/bundles/gddesignpage/css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="{{asset('./bundles/gddesignpage/css/style.css')}}">
+		<link rel="stylesheet" type="text/css" href="{{asset('./bundles/gddesignpage/css/bootstrap.css')}}">
 		
-		<link rel="stylesheet" type="text/css" href="/bundles/gddesignpage/css/fonts/fontawesome/css/font-awesome.min.css">
-		<script type='text/javascript' src="/bundles/gddesignpage/js/jquery.js"></script>
-		<script type='text/javascript' src="/bundles/gddesignpage/js/bootstrap.min.js"></script>
-		<script type='text/javascript' src="/bundles/gddesignpage/js/engine.js"></script>
+		<link rel="stylesheet" type="text/css" href="{{asset('./bundles/gddesignpage/css/fonts/fontawesome/css/font-awesome.min.css')}}">
+		<link rel="stylesheet" type="text/css" href="{{asset('./bundles/gddesignpage/css/fonts/font-mfizz-1.2/font-mfizz.css')}}">
+		<script type='text/javascript' src="{{asset('./bundles/gddesignpage/js/jquery.js')}}"></script>
+		<script type='text/javascript' src="{{asset('./bundles/gddesignpage/js/bootstrap.min.js')}}"></script>
+		<script type='text/javascript' src="{{asset('.//bundles/gddesignpage/js/engine.js')}}"></script>
 		<title>GD Design</title>
 	</head>
 	<body>
@@ -38,18 +40,11 @@
 									</ul>
 								</div>
 								<div class="col-sm-8">
-								<div class="log">
-									{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}    										
-    										<a href="{{url('fos_user_profile_show')}}"> <i  class="fa fa-lg fa-user medium"></i> {{app.user.username}}</a> 
-    										<span style = 'color:white'> | </span>
-    										<a href="{{ url('fos_user_security_logout' ) }}"> <i  class="fa fa-lg fa-sign-out medium"></i>{% trans %} Logout {% endtrans %} </a> 
-									{%else%}
-								           <a href="{{ url('fos_user_security_login') }}"><i  class="fa fa-lg fa-sign-in medium"></i>{% trans %}Login{% endtrans %}</a>  
-								           <span style = 'color:white'> | </span>
-								           <a href="{{ url('account_register' , { '_format': 'html'}) }}">	{% trans %}Register{% endtrans %}</a>
-								     {%endif%}      
-								 </div>
+							
 								<div align="right">
+								{%if app.session.get('newMessages') %}
+									<a href="{{ path('message_reply') }}"><i class="fa fa-envelope-o"></i> <span class="badge">{{app.session.get('newMessages')}}</span></a>
+								{%endif%}	
 									<div class="btn-group" align="center">
 										<button id="lang-btn" type="button" class="btn btn-primary dropdown-toggle"data-toggle="dropdown">{% if app.request.getLocale() == 'es' %}Castellano{% else %}English{%endif%} <span class="caret"></span></button>
 										<ul class="dropdown-menu" role="menu">
@@ -65,6 +60,27 @@
 										{%endif%}
 										</ul>
 									</div>
+									
+									{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %} 								
+									<div class="btn-group" align="center">
+										<button id="lang-btn" type="button" class="btn btn-primary dropdown-toggle"data-toggle="dropdown"><i class="fa fa-user"></i> {{app.user.username}} <span class="caret"></span></button>
+										<ul class="dropdown-menu" role="menu">										
+											<li><a href="{{ url('show') }}">Profile</a></li>
+											<li class="divider"></li>
+											<li><a href="{{ url('g_ddesign_page_locale' , {'_locale' : 'es', '_format': 'html'}) }}">Notifications</a></li>										
+										</ul>
+									</div>
+									<span style = 'color:white'> | </span>
+									<div class="log">
+										<a href="{{ url('fos_user_security_logout' ) }}"> <i  class="fa fa-lg fa-sign-out medium"></i>{% trans %} Logout {% endtrans %} </a>
+									</div>
+									{%else%}
+										<div class="log">
+										   <a href="{{ url('fos_user_security_login') }}"><i  class="fa fa-lg fa-sign-in medium"></i>{% trans %}Login{% endtrans %}</a>  
+										   <span style = 'color:white'> | </span>
+										   <a href="{{ url('account_register' , { '_format': 'html'}) }}">	{% trans %}Register{% endtrans %}</a>
+									 </div>
+									 {%endif%}  
 								</div>
 							</div>
 

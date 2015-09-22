@@ -23,7 +23,6 @@ class UserController extends Controller
     {
         $locale = $request->getLocale();
         $em = $this->getDoctrine()->getManager();
-
         $entities = $em->getRepository('GDdesignUserBundle:User')->findAll();
 
         return $this->render('GDdesignUserBundle:User:userAjaxTable.html.twig', array(

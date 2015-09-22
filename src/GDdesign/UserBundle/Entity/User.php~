@@ -76,7 +76,7 @@ class User extends BaseUser
         // your own logic
         $this->termsAccepted=true;
         $this->enabled=true;
-       
+        $this->locale = "en";
         
     }
 
@@ -253,27 +253,4 @@ class User extends BaseUser
     }
     
     
-
-    /**
-     * Set locale
-     *
-     * @param string $locale
-     * @return User
-     */
-    public function setLocale($locale)
-    {
-        $this->locale = $locale;
-
-        return $this;
-    }
-
-    /**
-     * Get locale
-     *
-     * @return string 
-     */
-    public function getLocale()
-    {
-        return $this->locale;
-    }
 }

@@ -8,12 +8,13 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use FOS\UserBundle\Controller\ProfileController as FOSProfileController;
 
+
 class ProfileController extends FOSProfileController
 {
-   public function showAction(Request $request)
+   public function showAction()
    {
 	   
-	   	$response = parent::showAction($request);
+	   	$response = parent::showAction();
 
         // ... do custom stuff
 

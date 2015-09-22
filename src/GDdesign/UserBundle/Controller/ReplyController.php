@@ -45,9 +45,9 @@ class ReplyController extends Controller
 	       		$j++;
 				if($message->getLive()==true)
 				{
-					$receiver[$messages[$i]->getReceiver()->getId()][$i] = $messages[$i]->getReceiver()->getUsername()."<br>";
-			    	$msg['subject'][$i][$j] = $message->getSubject();
-			    	$msg['receiver'][$i] = $messages[$i]->getReceiver()->getUsername();
+				       $receiver[$messages[$i]->getReceiver()->getId()][$i] = $messages[$i]->getReceiver()->getUsername()."<br>";
+			    	       $msg['subject'][$i][$j] = $message->getSubject();
+			    	        $msg['receiver'][$i] = $messages[$i]->getReceiver()->getUsername();
 					$msg['id'][$i] = $messages[$i]->getReceiver()->getId();
 					$msg['true'][$i] = $message->getLive();
 					$msg['sender'][$i] = $messages[$i]->getSender()->getUsername();

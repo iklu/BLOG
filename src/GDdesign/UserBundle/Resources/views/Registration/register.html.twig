@@ -35,13 +35,13 @@
 								<div class="row">
 									<div class="col-sm-6">
 										<label class="F-label-big">Password <span class="color-red">*</span></label>
-										{{ form_widget(form.plainPassword.password, {'attr': {'class': 'F-text-login F-text-reg'}}) }}
-										{{ form_errors(form.plainPassword.password) }}
+										{{ form_widget(form.plainPassword.first, {'attr': {'class': 'F-text-login F-text-reg'}}) }}
+										{{ form_errors(form.plainPassword.first) }}
 									</div>
 									<div class="col-sm-6">
 										<label class="F-label-big">Confirm Password <span class="color-red">*</span></label>
-										{{ form_widget(form.plainPassword.confirm, {'attr': {'class': 'F-text-login F-text-reg'}}) }}
-										{{ form_errors(form.plainPassword.confirm) }}
+										{{ form_widget(form.plainPassword.second, {'attr': {'class': 'F-text-login F-text-reg'}}) }}
+										{{ form_errors(form.plainPassword.second) }}
 									</div>
 								</div>
                                                                           {{ form_widget(form._token)}}

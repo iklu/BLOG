@@ -1,3 +1,4 @@
+#ajax request for read all users admin backend
 admin:
     path:     /read-all-users
     defaults: { _controller: "GDdesignUserBundle:User:index" }

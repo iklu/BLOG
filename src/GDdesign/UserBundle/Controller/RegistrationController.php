@@ -27,9 +27,9 @@ class RegistrationController extends FOSRegisterController
         return $response;
     }
     
-    public function confirmedAction(Request $request)
+    public function confirmAction(Request $request, $token)
     {
-    	$response = parent::confirmedAction($request);
+    	$response = parent::confirmAction($request, $token);
     	 return $response;
     }
 	

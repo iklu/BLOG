@@ -79,4 +79,34 @@ class DefaultController extends Controller
         return $this->render('./default/notFound.html.twig', array( 'locale' => $locale));
     }
     
+    public function sendMailAction(Request $request)
+    {
+    	$locale = $request->getLocale();
+    	 $message = \Swift_Message::newInstance()
+    	 ->setSubject('La pagina!')
+    	->setFrom("dragoiovidiu2011@gmail.com")
+    	->setTo($request->request->get('sender'))
+    	->setBody(
+    			 $this->render('./default/contact.html.twig', array( 'locale' => $locale))
+    			,
+    			'text/html'
+    	)
+    	->attach(\Swift_Attachment::fromPath('./files/none.png'))
+    	/*
+    	 * If you also want to include a plaintext version of the message
+    	->addPart(
+    			$this->renderView(
+    					'Emails/registration.txt.twig',
+    					array('name' => $name)
+    			),
+    			'text/plain'
+    	)
+    	*/
+    	;
+    	 $this->get('mailer')->send($message);
+  
+    	
+    	 return $this->render('./default/contact.html.twig', array( 'locale' => $locale));
+    }
+    
 }

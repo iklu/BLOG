@@ -39,8 +39,10 @@ class GDdesignUserExtension extends Extension
         }
         
 		//with this method i change the parameter from service.yml
+		/**
         $container->setParameter('mailer.transport', 'receivemail');
         echo  $container->get('mailer')->getTransport();
         echo "terminate";
+        */
     }
 }
